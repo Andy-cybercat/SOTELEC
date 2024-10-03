@@ -24,7 +24,11 @@ export default class UsuarioService{
         .del()
     }
     async searchUsuario(id){
+<<<<<<< HEAD
         return await this.knex('Usuario').select('*').where({ID_Usuario:id}).first()
+=======
+        return  await this.knex('Usuario').select('*').where({ID_Usuario:id}).first()
+>>>>>>> main
     }
     async searchUsuarioEmail(email){
         const user = await this.knex('usuario')

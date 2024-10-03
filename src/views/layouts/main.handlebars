@@ -13,7 +13,9 @@
       <div class="container-fluid">
 {{#if sessionUSER.ID_TECNICO}}
         <a class="navbar-brand" href="#">Bienvenido(a) {{sessionUSER.NOMBRETECNICO}}</a>
-{{/if}}
+{{/if}}     
+
+       
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -21,14 +23,18 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="http://localhost:8085/api/ticket">Home</a>
+              <a class="nav-link active" aria-current="page" href="http://localhost:8085/api/ticket " style="font-size: 1.2em;">Home</a>
             </li>
             <li class="nav-item">
+<<<<<<< HEAD
               <a class="nav-link" href="https://liceoexperimental.andaliensur.cl" target="_blank" rel="noopener noreferrer">liceo experimental</a>
+=======
+              <a class="nav-link" href="https://liceoexperimental.andaliensur.cl" style="font-size: 1.2em;">liceo experimental</a>
+>>>>>>> main
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+                aria-expanded="false" style="font-size: 1.2em;">
                 usuario
               </a>
               <ul class="dropdown-menu">
@@ -37,7 +43,7 @@
             </li>            
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+                aria-expanded="false" style="font-size: 1.2em;">
                 tecnico
               </a>
               <ul class="dropdown-menu">
@@ -48,15 +54,19 @@
             </li>  
              <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+                aria-expanded="false" style="font-size: 1.2em;">
                 tickets 
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="http://localhost:8085/api/ticket">ver tickets</a></li>
               </ul>
             </li>    
+<<<<<<< HEAD
              
              <a href="/api/tecnicos/logout"> <img src="/img/descarga.jpg" alt="Logout"> </a>      
+=======
+             <a class="navbar-brand" href="/api/tecnicos/logout" style="font-size: 1.2em;">Logout</a>      
+>>>>>>> main
           </ul>
 
         </div>
