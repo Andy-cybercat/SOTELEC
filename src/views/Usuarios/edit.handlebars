@@ -1,0 +1,18 @@
+<h2 id="editUsermje"></h2>
+<form id="editUser">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Area</label>
+        <input type="text" name="AREA" value="{{usuario.AREA}}" class="form-control" placeholder="name@example.com">
+    </div>
+     <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Correo</label>
+        <input type="email" name="CORREOUSUARIO"  value="{{usuario.CORREOUSUARIO}}" class="form-control" placeholder="name@example.com">
+    </div>
+         <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+        <input type="text" name="NOMBREUSUARIO" value="{{usuario.NOMBREUSUARIO}}" class="form-control" placeholder="name@example.com">
+    </div>
+    <input type="hidden" name="id" value="{{usuario.ID_USUARIO}}">
+     <button type="submit" class="btn btn-primary">Actualizar usuario</button>
+</form>
+<script src="/js/usuarios/edit.js"></script>
