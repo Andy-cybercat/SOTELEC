@@ -1,11 +1,13 @@
 <div class="modal-dialog text-center">
+    
     <h2 id="ErrorLoginMensaje">
     </h2>
         <div class="col-sm-8 main-section">
             <div class="modal-content">
                 <div class="col-12 user-img">
-                    <img src="/img/login/user.png" th:src="@{/img/login/user.png}"/>
+                  <img src="/img/login/LEC.jpg" alt="Logo" width="100" height="auto">
                 </div>
+                <a  class="text-center" style="font-size: 1.5em; color: white;">Bienvenido</a>
                 <form id="FormLoginTecnico" class="col-12" th:action="@{/login}">
                     <div class="form-group" id="user-group">
                         <input type="email" name="CORREOTECNICO" class="form-control" placeholder="Correo" name="username"/>
