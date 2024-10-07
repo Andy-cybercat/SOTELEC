@@ -1,5 +1,5 @@
-const mje = document.querySelector('#createUsermje')
-document.querySelector('#createUser').addEventListener('submit',e=>{
+const mje = document.querySelector('#editUsermje')
+document.querySelector('#editUser').addEventListener('submit',e=>{
     e.preventDefault()
     const data = Object.fromEntries(
         new FormData(e.target)
@@ -10,16 +10,15 @@ document.querySelector('#createUser').addEventListener('submit',e=>{
 
 const llamandoAPI = async (data) => {
 	const options = {
-		method: 'POST',
+		method: 'PUT',
 		headers: {
 			'Content-Type':'application/json'
 		},
         body:JSON.stringify(data),
 		cache: 'no-cache'
 	}
-	const respuesta = await fetch(`/api/usuarios`,options)
+	const respuesta = await fetch(`/api/usuarios/${data.id}`,options)
 	const res = await respuesta.json()
-<<<<<<< HEAD
 	res.success ?
 
 mje.innerHTML=`<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -36,19 +35,4 @@ mje.innerHTML=`<div class="alert alert-success alert-dismissible fade show" role
 
  </div>`
 	console.log(res)
-=======
-	console.log(res)
-	res.success ?
-	mje.innerHTML = `<div
-		class="alert alert-success alert-dismissible fade show" role="alert">
-		<strong>${res.data}</strong>
-		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  	</div>`
-	 :
-	 mje.innerHTML = `<div
-		class="alert alert-danger alert-dismissible fade show" role="alert">
-		<strong>${res.data}</strong> 
-		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  	</div>`
->>>>>>> main
 }
