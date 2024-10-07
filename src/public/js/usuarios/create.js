@@ -19,6 +19,24 @@ const llamandoAPI = async (data) => {
 	}
 	const respuesta = await fetch(`/api/usuarios`,options)
 	const res = await respuesta.json()
+<<<<<<< HEAD
+	res.success ?
+
+mje.innerHTML=`<div class="alert alert-success alert-dismissible fade show" role="alert">
+  
+<strong>${res.data}</strong> 
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+ </div>`
+:
+ mje.innerHTML=`<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  
+<strong>${res.data}</strong>
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+ </div>`
+	console.log(res)
+=======
 	console.log(res)
 	res.success ?
 	mje.innerHTML = `<div
@@ -32,4 +50,5 @@ const llamandoAPI = async (data) => {
 		<strong>${res.data}</strong> 
 		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   	</div>`
+>>>>>>> main
 }

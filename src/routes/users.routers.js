@@ -14,16 +14,17 @@ router.get('/create',async (req,res)=>{
     res.render(`${folder}/create`)
 })
 
+
 router.get('/edit/:id',async (req,res)=>{
     const id = req.params.id
-    const usuario = await Usuario.searchUsuario(id)
-    res.render(`${folder}/edit`)
+    const usuario =  await Usuario.searchUsuario(id)
+    res.render(`${folder}/edit`, {usuario})
+
 })
 
 router.get('/',async(req,res) => {
     try{
         const usuarios = await Usuario.getUsuarios()
-
         res.render('Usuarios/index',{usuarios})
     } catch(error) {
 
@@ -32,13 +33,16 @@ router.get('/',async(req,res) => {
 })
 
 router.post('/', async (req,res) => {
+    try{
     const usuario = req.body
     const answer = await Usuario.storeUsuario(usuario)
     if(answer.length > 0){
-        return res.status(200).json(
-            {success:true,data:"Usuario registrado con éxito"})
+        return res.status(200).json({success:true,data:"usuario registrado con éxito"})
     }else{
-        return res.status(400).json({success:false,data:"No se pudo registrar el usuario"})
+        return res.status(400).json({success:false,data:"No se pudo realizar el registro"})
+    }
+}catch(err){
+    return res.status(400).json({success:false,data:"error al registrar usuario"})
     }
 })
 
@@ -50,7 +54,7 @@ router.put('/:id', async (req,res) => {
     if(answer > 0){
         return res.status(200).json({success:true,data:"se ha actualizado el usuario con exito"})
     }else{
-        return res.status(400).json({success:false,data:"No se encuentra el registro"})
+        return res.status(400).json({success:false,data:"No se a podido actualizar el usuario"})
     }
 })
 router.delete('/:id', async (req, res) => {
@@ -59,7 +63,7 @@ router.delete('/:id', async (req, res) => {
     if(answer.length > 0){
         return res.status(200).json({sucess :true,data:answer})
     }else{
-        return res.status(400).json({success:false,data:"No se encuentra el registro"})
+        return res.status(400).json({success:false,data:"No se pudo eliminar el usuario"})
     }
 })
 router.get('/:id', async (req,res) =>{
