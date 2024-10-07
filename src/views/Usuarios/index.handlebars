@@ -1,6 +1,5 @@
-
-<a href="/api/usuarios/create" class="btn btn-primary" tabindex="-1" role="button"
-aria-disabled="true">Registrar Usuario</a>
+<p id="deleteUserById"></p>
+<a href="/api/usuarios/create" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Registrar usuario</a>
 <div class="row">
     {{#each usuarios}}
   <div class="col-sm-3">
@@ -9,12 +8,15 @@ aria-disabled="true">Registrar Usuario</a>
         <h5 class="card-title">{{this.AREA}}</h5>
         <p class="card-text">{{this.CORREOUSUARIO}}</p>
         <p class="card-text">{{this.NOMBREUSUARIO}}</p>
-        <a href="/api/usuarios/edit/{{this.ID_USUARIO}}" class="btn btn-warning">Actualizar</a>
-        <a href="#" class="btn btn-danger">Eliminar</a>
+        <a href="/api/usuarios/edit/{{this.ID_USUARIO}}" class="btn btn-warning">actualizar</a>
+
+        <button type="button"  class="btn btn-danger" onclick="deleteUserById({{this.ID_USUARIO}})">eliminar</button>
+
       </div>
     </div>
   </div>
   {{/each}}
 </div>
 
-<script src=""></script>
+<script src="/js/usuarios/delete.js"></script>
+
