@@ -15,7 +15,7 @@ export default class TecnicosService{
     }
     deleteTecnicos = async (id) => {
 
-        return this.knex('tecnico').where('ID_TECNICO',id) .del()
+        return this.knex('tecnico').where('ID_TECNICO',id).del()
         
     } 
     updateTecnicos = async (id,obj) => {

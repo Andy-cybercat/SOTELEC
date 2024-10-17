@@ -61,9 +61,9 @@ router.delete('/:id', async (req, res) => {
     const id = req.params.id
     const answer = await Usuario.deleteUsuario(id)
     if(answer.length > 0){
-        return res.status(200).json({sucess :true,data:answer})
+        return res.status(200).json({sucess :true,data:"no se pudo eliminar el usuario"})
     }else{
-        return res.status(400).json({success:false,data:"No se pudo eliminar el usuario"})
+        return res.status(400).json({success:false,data:"se pudo eliminar el usuario"})
     }
 })
 router.get('/:id', async (req,res) =>{
